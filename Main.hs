@@ -10,8 +10,6 @@ import System.Process
 
 headerFileName = "Header.hs"
 
-haskellInterp = "runghc"
-
 main = do
   fileName : scriptArgs <- getArgs
   if ".sy" `isSuffixOf` fileName
@@ -26,7 +24,7 @@ main = do
         script <- readFile fileName
         writeFile hsFileName $ header ++ script
     proc <- runProcess
-      haskellInterp (hsFileName : scriptArgs)
+      "runghc" ("-fglasgow-exts" : hsFileName : scriptArgs)
       Nothing Nothing Nothing Nothing Nothing
     code <- waitForProcess proc
     exitWith code

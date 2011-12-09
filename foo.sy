@@ -1,0 +1,3 @@
+
+prog xs = print xs >> return 0
+
