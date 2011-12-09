@@ -27,9 +27,14 @@ with a header that:
 * Wraps your `prog` function (which has the UNIX-friendly type `[String] -> Int`)
   in a proper Haskell `main` function.
 
-What I see in the future of Scripty is mainly the creation of modules (which could
-useful to any Haskell program) which facilitate scripting tasks:
+Scripty runs scripts with `runghc -fglasgow-exts`, which means:
 
-* File-system navigation and examination
-* Process control and interaction
+* Scripty depends on [GHC](http://www.haskell.org/ghc/), and
+* Scriptyscripts can use any GHC extension enabled by `-fglasgow-exts`.
+
+What I see in the future of Scripty is mainly the creation of modules (which could
+useful to any Haskell program) which facilitate scripting tasks, such as:
+
+* File-system navigation and examination, and
+* Process control and interaction.
 
