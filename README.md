@@ -8,7 +8,7 @@ First, compile Scripty:
 
     make
 
-You make a scriptyscript like this called `foo.sy`:
+Then, make a scriptyscript like this called `foo.sy`:
 
     prog args = print args >> return 0
 
